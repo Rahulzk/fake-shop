@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom';
 import Suggestion from './Suggestion';
 
 const SearchBar = ({ suggestionToggle }) => {
@@ -22,13 +23,15 @@ useEffect(()=>{
   return (
     <div className="search-bar row">
         <div className="col-9 mx-auto search-bar-div">
-            <input className='search-box' type="text" name="text" placeholder='SEARCH' readOnly onChange={(e)=>updateFilterItem(e)}   />
+            <input className='search-box' type="text" name="text" placeholder='SEARCH'  onChange={(e)=>updateFilterItem(e)}   />
             {/* <BsSearch className='search-icon'/> */}
 
              {
               suggestionToggle && <div className="suggestions">
               <Suggestion />
+             
            </div>
+               
              }
         </div>
         
